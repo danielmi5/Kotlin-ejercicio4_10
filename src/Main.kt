@@ -1,14 +1,14 @@
 import funciones.quiere
 
 fun main(){
-    val partida = Partida("josre")
+    val partida = Partida("3 en raya")
 
     do {
         partida.iniciarPartida()
         val quiereOtra = quiere("¿Quieres jugar otra partida?")
     } while (quiereOtra)
 
-    println("Estadísticas:\n")
+    println("\nEstadísticas:")
     partida.mostrarStats()
 
 }

@@ -41,8 +41,10 @@ class Tablero(
             if ((tablero[fila].count { it == 'X'} == 3) || tablero[fila].count { it == 'O' } == 3) return true
             var cont = 0
             for (x in 0..(dimensiones-1)) {
-                if (tablero[x][fila] == 'X') cont++
-                if (tablero[x][fila] == 'O') cont--
+                //Si al recorrer cada columna en el contaador sale 3 es que todas son X, si es -3 -> todas son O
+                val columna = fila
+                if (tablero[x][columna] == 'X') cont++
+                if (tablero[x][columna] == 'O') cont--
                 if (cont == 3 || cont == -3) return true
             }
         }

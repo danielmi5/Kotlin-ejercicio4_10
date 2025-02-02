@@ -19,10 +19,12 @@ fun pedirOpcion(msj: String, numOpciones: Int): Int {
         print(msj)
         try {
             opcion = readln().toInt()
+            if (opcion !in 1..numOpciones) throw IllegalArgumentException("Coordenada fuera de límite.")
         } catch (e: NumberFormatException) {
-            println("Error: ${e.message}")
+            println("Error -> Debes introducir un entero válido.")
+        } catch (e: IllegalArgumentException){
+            println("Error -> $e.")
         }
-        if (opcion !in 1..numOpciones) println("Coordenada fuera de límite.")
     } while (opcion !in 1..numOpciones)
     return opcion
 }
